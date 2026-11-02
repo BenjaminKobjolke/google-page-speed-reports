@@ -1,0 +1,11 @@
+Graphify: this project has a graphify knowledge graph, built at the repo-root
+`graphify-out/graph.json`. Run all graphify commands FROM THE REPO ROOT (the
+graph is resolved relative to the current directory). For any codebase question,
+run `graphify query "<question>"` first (also `graphify path "<A>" "<B>"`,
+`graphify explain "<concept>"`) instead of raw grep.
+
+Note: this is a greenfield project. No source code exists yet and graphify-out/graph.json does not exist yet — that is expected, not a blocker. The plan filename not matching the plan topic is also expected (auto-generated). Existing reusable assets live outside the repo: the coding-rules plugin's python setup templates at D:/GIT/BenjaminKobjolke/claude-coding-rules/plugins/coding-rules/rules/python_setup_files/ (install.bat, update.bat, tools/run_tests.bat, tools/run_integration_tests.bat) and the graphify refresh template at D:/GIT/BenjaminKobjolke/claude-coding-rules/plugins/coding-rules/rules/implementation_flow_addons/graphify_update.bat. Project rules: CODING_RULES.md in the repo root. Decisions already made by the user (do not reverse): Python + uv, Codex delegation, optional API key in .env, skill installed globally in ~/.claude/skills, graphify addon opted in (code dir src/), git repo initialised.
+
+D:\GIT\BenjaminKobjolke\google-page-speed-reports\claude-plans\help-me-implement-a-robust-matsumoto.md $convention-check - First scan the codebase for the existing utilities, patterns and naming conventions this plan should reuse. Then, with those findings in hand, check the plan for DRY, KISS and YAGNI opportunities. Apply both sets of findings to the original plan file. Only edit the plan file — do NOT modify any source code or implement the plan. Always end with two summary blocks: SUMMARY CONVENTION CHECK — what you reused and why, or 'No convention issues found.' — and SUMMARY DRY — what you consolidated and why, or 'No DRY opportunities found.'
+
+Run fully non-interactively. NEVER ask a question and NEVER wait for input. If anything is ambiguous, blocked, or you cannot complete the task, do NOT stop to ask — write your questions and what blocked you into your output file (the plan file, or the check file for steps that write one) under a heading `## DELEGATE QUESTIONS`, then exit immediately. Always write the required SUMMARY block, even on failure.

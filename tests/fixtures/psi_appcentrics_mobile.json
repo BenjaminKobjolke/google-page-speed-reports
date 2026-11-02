@@ -1,0 +1,136 @@
+{
+  "id": "https://appcentrics.de/",
+  "lighthouseResult": {
+    "requestedUrl": "https://appcentrics.de/",
+    "finalDisplayedUrl": "https://appcentrics.de/",
+    "fetchTime": "2026-11-02T09:10:00.000Z",
+    "lighthouseVersion": "12.8.0",
+    "categories": {
+      "performance": {
+        "id": "performance",
+        "title": "Performance",
+        "score": 0.62,
+        "auditRefs": [
+          {"id": "first-contentful-paint", "weight": 10, "group": "metrics"},
+          {"id": "largest-contentful-paint", "weight": 25, "group": "metrics"},
+          {"id": "total-blocking-time", "weight": 30, "group": "metrics"},
+          {"id": "cumulative-layout-shift", "weight": 25, "group": "metrics"},
+          {"id": "speed-index", "weight": 10, "group": "metrics"},
+          {"id": "unused-javascript", "weight": 0, "group": "diagnostics"},
+          {"id": "render-blocking-insight", "weight": 0, "group": "insights"},
+          {"id": "render-blocking-resources", "weight": 0, "group": "hidden"},
+          {"id": "uses-text-compression", "weight": 0, "group": "diagnostics"},
+          {"id": "mainthread-work-breakdown", "weight": 0, "group": "diagnostics"},
+          {"id": "font-display", "weight": 0, "group": "diagnostics"}
+        ]
+      },
+      "accessibility": {
+        "id": "accessibility",
+        "title": "Accessibility",
+        "score": 0.88,
+        "auditRefs": [
+          {"id": "image-alt", "weight": 10, "group": "a11y-names-labels"},
+          {"id": "color-contrast", "weight": 7, "group": "a11y-color-contrast"},
+          {"id": "video-caption", "weight": 0, "group": "a11y-audio-video"}
+        ]
+      },
+      "best-practices": {
+        "id": "best-practices",
+        "title": "Best Practices",
+        "score": 0.96,
+        "auditRefs": [
+          {"id": "errors-in-console", "weight": 1, "group": "best-practices-general"},
+          {"id": "is-on-https", "weight": 5, "group": "best-practices-trust-safety"}
+        ]
+      },
+      "seo": {
+        "id": "seo",
+        "title": "SEO",
+        "score": 0.91,
+        "auditRefs": [
+          {"id": "meta-description", "weight": 1, "group": "seo-content"},
+          {"id": "document-title", "weight": 1, "group": "seo-content"}
+        ]
+      }
+    },
+    "audits": {
+      "first-contentful-paint": {"id": "first-contentful-paint", "title": "First Contentful Paint", "description": "FCP marks the time at which the first text or image is painted.", "score": 0.55, "scoreDisplayMode": "numeric", "displayValue": "2.9 s", "numericValue": 2900},
+      "largest-contentful-paint": {"id": "largest-contentful-paint", "title": "Largest Contentful Paint", "description": "LCP marks the time at which the largest text or image is painted.", "score": 0.21, "scoreDisplayMode": "numeric", "displayValue": "5.1 s", "numericValue": 5100},
+      "total-blocking-time": {"id": "total-blocking-time", "title": "Total Blocking Time", "description": "Sum of all time periods between FCP and Time to Interactive.", "score": 0.93, "scoreDisplayMode": "numeric", "displayValue": "120 ms", "numericValue": 120},
+      "cumulative-layout-shift": {"id": "cumulative-layout-shift", "title": "Cumulative Layout Shift", "description": "CLS measures the movement of visible elements.", "score": 1, "scoreDisplayMode": "numeric", "displayValue": "0.002", "numericValue": 0.002},
+      "speed-index": {"id": "speed-index", "title": "Speed Index", "description": "Speed Index shows how quickly the contents of a page are visibly populated.", "score": 0.4, "scoreDisplayMode": "numeric", "displayValue": "6.0 s", "numericValue": 6000},
+      "unused-javascript": {
+        "id": "unused-javascript", "title": "Reduce unused JavaScript",
+        "description": "Reduce unused JavaScript and defer loading scripts until they are required. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/).",
+        "score": 0, "scoreDisplayMode": "metricSavings", "displayValue": "Est savings of 340 KiB",
+        "metricSavings": {"LCP": 1200, "FCP": 0},
+        "details": {
+          "type": "opportunity", "overallSavingsMs": 1200, "overallSavingsBytes": 348160,
+          "items": [
+            {"url": "https://appcentrics.de/js/app.js", "totalBytes": 400000, "wastedBytes": 215040, "wastedPercent": 53},
+            {"url": "https://www.googletagmanager.com/gtag/js?id=G-XXXX", "totalBytes": 150000, "wastedBytes": 133120, "wastedPercent": 88}
+          ]
+        }
+      },
+      "render-blocking-insight": {
+        "id": "render-blocking-insight", "title": "Render blocking requests",
+        "description": "Requests are blocking the initial render of the page, which may delay LCP.",
+        "score": 0, "scoreDisplayMode": "metricSavings", "displayValue": "Est savings of 450 ms",
+        "metricSavings": {"FCP": 450, "LCP": 450, "CLS": 0},
+        "details": {
+          "type": "list",
+          "items": [
+            {"type": "table", "items": [
+              {"url": "https://appcentrics.de/css/main.css", "totalBytes": 90000, "wastedMs": 450},
+              {"url": "https://fonts.googleapis.com/css2?family=Inter", "totalBytes": 1200, "wastedMs": 300}
+            ]}
+          ]
+        }
+      },
+      "render-blocking-resources": {
+        "id": "render-blocking-resources", "title": "Eliminate render-blocking resources",
+        "description": "Legacy duplicate of the render blocking insight.",
+        "score": 0, "scoreDisplayMode": "metricSavings",
+        "details": {"type": "opportunity", "overallSavingsMs": 450, "items": [{"url": "https://appcentrics.de/css/main.css"}]}
+      },
+      "uses-text-compression": {
+        "id": "uses-text-compression", "title": "Enable text compression",
+        "description": "Text-based resources should be served with compression.",
+        "score": 1, "scoreDisplayMode": "metricSavings",
+        "details": {"type": "opportunity", "overallSavingsMs": 0, "overallSavingsBytes": 0, "items": []}
+      },
+      "mainthread-work-breakdown": {
+        "id": "mainthread-work-breakdown", "title": "Minimize main-thread work",
+        "description": "Consider reducing the time spent parsing, compiling and executing JS.",
+        "score": null, "scoreDisplayMode": "informative", "displayValue": "2.1 s"
+      },
+      "font-display": {
+        "id": "font-display", "title": "Ensure text remains visible during webfont load",
+        "description": "Use font-display.", "score": null, "scoreDisplayMode": "notApplicable"
+      },
+      "image-alt": {
+        "id": "image-alt", "title": "Image elements do not have `[alt]` attributes",
+        "description": "Informative elements should aim for short, descriptive alternate text.",
+        "score": 0, "scoreDisplayMode": "binary",
+        "details": {
+          "type": "table",
+          "items": [
+            {"node": {"type": "node", "selector": "div.hero > img", "snippet": "<img src=\"/img/hero.webp\">", "nodeLabel": "hero"}},
+            {"node": {"type": "node", "selector": "footer img.logo", "snippet": "<img class=\"logo\" src=\"/img/logo.svg\">", "nodeLabel": "logo"}}
+          ]
+        }
+      },
+      "color-contrast": {"id": "color-contrast", "title": "Background and foreground colors have a sufficient contrast ratio", "description": "Low-contrast text is difficult to read.", "score": 1, "scoreDisplayMode": "binary"},
+      "video-caption": {"id": "video-caption", "title": "`<video>` elements contain a `<track>` element", "description": "Captions.", "score": null, "scoreDisplayMode": "notApplicable"},
+      "errors-in-console": {
+        "id": "errors-in-console", "title": "Browser errors were logged to the console",
+        "description": "Errors logged to the console indicate unresolved problems.",
+        "score": 0, "scoreDisplayMode": "binary",
+        "details": {"type": "table", "items": [{"source": "network", "description": "Failed to load resource: 404", "url": "https://appcentrics.de/favicon-32.png"}]}
+      },
+      "is-on-https": {"id": "is-on-https", "title": "Uses HTTPS", "description": "All sites should be protected with HTTPS.", "score": 1, "scoreDisplayMode": "binary"},
+      "meta-description": {"id": "meta-description", "title": "Document does not have a meta description", "description": "Meta descriptions may be included in search results.", "score": 0, "scoreDisplayMode": "binary"},
+      "document-title": {"id": "document-title", "title": "Document has a `<title>` element", "description": "The title gives screen reader users an overview of the page.", "score": 1, "scoreDisplayMode": "binary"}
+    }
+  }
+}

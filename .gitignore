@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.env
+reports/
+pagespeed-reports/
+coding-rules.json
+graphify-out/
+src/graphify-out/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.claude/
+/PLAN_*.md

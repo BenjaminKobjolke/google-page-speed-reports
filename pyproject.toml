@@ -1,0 +1,41 @@
+[project]
+name = "pagespeed-report"
+version = "0.1.0"
+description = "Google PageSpeed Insights reports as Markdown for AI coding agents"
+readme = "README.md"
+authors = [
+    { name = "Benjamin Kobjolke", email = "b.kobjolke@xida.de" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.14.2",
+]
+
+[project.scripts]
+pagespeed-report = "pagespeed_report.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.9.18,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.4.1",
+    "pytest>=9.2.0",
+    "ruff>=0.17.3",
+]
+
+[tool.ruff]
+line-length = 100
+# ruff format would also rewrite Python blocks inside the managed CODING_RULES.md
+extend-exclude = ["*.md"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+strict = true
+plugins = ["pydantic.mypy"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
