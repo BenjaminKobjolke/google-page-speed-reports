@@ -7,5 +7,18 @@
     "install_skill.bat",
     "run_integration_tests.bat",
     "run_tests.bat"
-  ]
+  ],
+  "analysis_commands": [],
+  "analysis_commands_seen": {
+    "scripts": [
+      "graphify_update.bat",
+      "install_skill.bat",
+      "run_integration_tests.bat",
+      "run_tests.bat"
+    ],
+    "tests": true
+  },
+  "analysis_tests_answered": true,
+  "analysis_code_quality_answered": true,
+  "project_id": 12381
 }
