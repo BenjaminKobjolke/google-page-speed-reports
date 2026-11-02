@@ -11,3 +11,4 @@ src/graphify-out/
 .ruff_cache/
 .claude/
 /PLAN_*.md
+tickets/
