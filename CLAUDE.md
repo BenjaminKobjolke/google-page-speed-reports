@@ -37,3 +37,15 @@ they are intentionally referenced, not imported.
 - CLI: `start.bat <domain>` runs `pagespeed-report`; logs go to stderr, the Markdown report to stdout.
 - The `/pagespeed-report` skill source is `skill/pagespeed-report/SKILL.md`; after editing it run
   `tools/install_skill.bat` to update the global copy in `%USERPROFILE%\.claude\skills`.
+
+## Post-Implementation Code Analysis
+
+After any feature, completed plan, or bug fix, run the changed-files analyzer and fix every reported issue before considering the work complete:
+
+```powershell
+cmd /c ".\tools\analyze_changed_and_new_files.bat"
+```
+
+It reports findings only for files changed from Git `HEAD`, including untracked files. Run `tools\analyze_code.bat` for a whole-project audit, exception maintenance, before a release or merge, after a shared-code refactor, or when the working tree has no changes.
+
+Analyzer reports are written as per-rule CSV files under `code_analysis_results\`; a missing CSV means that rule found no issues. Fix applicable findings and rerun the changed-files analyzer until it exits successfully.
